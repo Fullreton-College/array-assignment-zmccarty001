@@ -8,9 +8,15 @@ int countPerfect(const int scores[], int size);
 int main() {
     int scores[20];
     int count = 0;
-    int input;
+
 
     cout << "Enter up to 20 scores (0-100). Enter -1 to stop:\n";
+    
+    for (count = 0; count <=19; count++) {
+        cin>>scores[count];
+        if (scores[count] == -1) break;
+    }
+    
 
     // Store scores and keep track of how many are entered
     // Report perfect scores using the helper function
@@ -26,6 +32,11 @@ int main() {
 // Value-returning function to count scores of 100
 int countPerfect(const int scores[], int size) {
     int totalPerfect = 0;
-    //COMPLETE THE CODE 
+    for (int i = 0; i < size; i++) {
+        if (scores[i] == 100) {
+            totalPerfect++;
+        } 
+
+    }
     return totalPerfect;
 }
